@@ -4,9 +4,12 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/lib/includes/database.php');
     function   buidMenu($menuArray)
     {
         echo '
-            <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div  class="collapse navbar-collapse">
+            <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+  <div class="navbar-header">
+  <a class="navbar-brand" href="#">ToDoList</a>
+    <div  class="collapse navbar-collapse navbar-ex1-collapse">
+    </div>
+    </div>
     <ul class="nav navbar-nav"> 
     ';
         foreach ($menuArray as $node)
