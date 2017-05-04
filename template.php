@@ -1,7 +1,6 @@
 ﻿<?php
-	include_once($_SERVER['DOCUMENT_ROOT'].'/lib/includes/database.php');
-	include_once($_SERVER['DOCUMENT_ROOT'].'/lib/TreeMenu.php');
-	
+	include_once($_SERVER['DOCUMENT_ROOT'].'/todolist/lib/includes/database.php');
+	include_once($_SERVER['DOCUMENT_ROOT'].'/todolist/lib/TreeMenu.php');
 	$tree = new TreeMenu($dbh);
 ?>
 
@@ -11,19 +10,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Аптека Санна </title>
+    <title> ToDoList </title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
 </head>
 <body>
-    <!--Begin modal window-->
-<div class="modal fade bs-example-modal-lg in" id="add-new-task" role="dialog" tabindex="-1" aria-labelledby="myLargeModalLabel">
-   <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-      </div>
-   </div>
-</div> <!--End modal window-->
 
     <!--Begin modal window-->
 <div class="modal fade bs-example-modal-lg in" id="add-new-task-month" role="dialog" tabindex="-1" aria-labelledby="myLargeModalLabel">
@@ -44,7 +36,7 @@
       </div>
    </div>
 </div> <!--End modal window-->
-
+    <?php include_once ($_SERVER['DOCUMENT_ROOT'] . '/todolist/lib/includes/modal_reg.php'); ?>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -75,32 +67,31 @@
 
     <div class="jumbotron">
         <div class="container">
-            <h1>ToDoList</h1>
-            <p></p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Наши скидки &raquo;</a></p>
+            <h1>ToDoList - Ты никогда не забудешь о своих задачах</h1>
+            <p>Управляйте вашими задачами с чего угодно.</p>
+            <p>Желаете начать жмите кнопку ниже.</p>
+            <p><a class="btn btn-primary btn-lg" href="#" data-toggle="modal" data-target="#modal_reg" datarole="button">Начать&raquo;</a></p>
         </div>
     </div>
-
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
             <div class="col-md-4">
-                <h2>Товар 1 </h2> 1
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <h2>Дизайн без отвлекающих элементов.</h2>
+                <p>Ваши задачи -  большая часть вашей жизни. Остовайтесь мотивированными с помощью интуитивного списка задач ToDoList. </p>
+                <p><a class="btn btn-default" href="#" role="button">Подробнее &raquo;</a></p>
             </div>
             <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <h2>Дизайн без отвлекающих элементов.</h2>
+                <p>Ваши задачи -  большая часть вашей жизни. Остовайтесь мотивированными с помощью интуитивного списка задач ToDoList. </p>
+                <p><a class="btn btn-default" href="#" role="button">Подробнее &raquo;</a></p>
             </div>
             <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <h2>Дизайн без отвлекающих элементов.</h2>
+                <p>Ваши задачи -  большая часть вашей жизни. Остовайтесь мотивированными с помощью интуитивного списка задач ToDoList.</p>
+                <p><a class="btn btn-default" href="#" role="button">Подробнее &raquo;</a></p>
             </div>
         </div>
-
         <hr>
 
         <footer>
@@ -115,7 +106,7 @@
     <!--Скрипт Открытия календаря с параметрами-->
   <script type="text/javascript">
     $(function () {
-      $(\'#datetimepicker1\').datetimepicker({language: \'ru\', pickTime: false});
+      $('#datetimepicker1\').datetimepicker({language: \'ru\', pickTime: false});
     });
 </script>
 <!--Переключаем состояния радио кнопок из активного на неактивное и наооборот-->

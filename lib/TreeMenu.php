@@ -37,7 +37,7 @@ class TreeMenu {
 				if ($children) {
 					$element['children'] = $children;
 				}
-				
+
 				// Добавим данные в результирующий объект
 				$branch[$element['id']] = $element;
 				
