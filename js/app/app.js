@@ -1,5 +1,5 @@
 (function(TDLCollection){
-    'use strict'
+    'use strict';
     var my = [
     {
         task: 'list-goals',

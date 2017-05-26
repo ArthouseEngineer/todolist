@@ -4,7 +4,7 @@ var ToDoListCollection = function (name) {
 	this.container = document.querySelector('#todo-lists');
 	this.init = function(){
 	}
-}
+};
 
 ToDoListCollection.prototype = Object.create(Array.prototype);
 ToDoListCollection.prototype.constructor = ToDoListCollection;
@@ -16,7 +16,7 @@ ToDoListCollection.prototype.addSingle = function(options) {
 	var toDoList = new ToDoList(options.task);
 	toDoList.init();
 	this.push(toDoList);
-}
+};
 
 ToDoListCollection.prototype.getTemplate = function(options){
 	var task = options.task,
@@ -67,4 +67,4 @@ ToDoListCollection.prototype.getTemplate = function(options){
 </div>
 `;
 	 return template;
-}
+};

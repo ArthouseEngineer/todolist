@@ -64,12 +64,12 @@ class TreeMenu {
 		{
 			if (empty($node['children']))
 			{
-				echo '<li><a href="#">' . $node['title'] . '</a>';
+				echo '<li><a href="' .$node['link'] . '">' . $node['title'] . '</a>';
 			}
 			else
             {
-				    echo '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">'
-                          . $node['title'] . '<span class="caret"></span></a>';
+				    echo '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" 
+                                    href="' .$node['link'] . '">' . $node['title'] . '<span class="caret"></span></a>';
                     echo '<ul class="dropdown-menu">';
                     $this->buildMenu($node['children']);
                     echo '</ul>';
@@ -81,6 +81,9 @@ class TreeMenu {
 	
 	public function getMenuHtml() {
 		$this->buildMenu($this->_category_tree);
+//        echo "<pre>";
+//        print_r($this->_category_tree);
+//        echo "</pre>";
 	}
 	
 }

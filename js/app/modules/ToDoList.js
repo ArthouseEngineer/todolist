@@ -24,12 +24,12 @@ var ToDoList = function (name) {
 	 */
 		this.drawEntry = function(entry) {
 				this.el.innerHTML += '<li>' + entry + '</li>'
-	}
+	};
 	this.addEntry = function (entry) {
 
 		this.tasks.push(entry);
 		this.drawEntry(entry);
-}
+};
 /**
  * Доработат методы saveLoad Task с возможностью сохранения задач.
  * Удалить поле ввода добавить вместо него TextArea высотой 3 строки запретить его масштабирование по оси X 
@@ -48,7 +48,7 @@ var ToDoList = function (name) {
 		this.addByArray([]);
 		this.saveTasks();
 	}
-}
+};
 
 
 /**
@@ -60,7 +60,7 @@ ToDoList.prototype.saveTasks = function () {
 	var tasksJSON = JSON.stringify(this.tasks);
 	localStorage.setItem('tasks' + this.task,tasksJSON); 
 	localStorage.key(this.tasks);
-}
+};
 
 ToDoList.prototype.loadTasks = function () {
 	var tasks = (localStorage.getItem('tasks' + this.task) !== null ) ? JSON.parse(
@@ -68,7 +68,7 @@ ToDoList.prototype.loadTasks = function () {
 	this.tasks = tasks;
 
 	this.addByArray(this.tasks);
-}
+};
 
 ToDoList.prototype.addByArray = function (array) {
 	this.array = array;
@@ -77,7 +77,7 @@ ToDoList.prototype.addByArray = function (array) {
 	array.forEach(function (item) {
 		list.drawEntry(item);
 	});
-}
+};
 
 
 /**
@@ -94,7 +94,7 @@ ToDoList.prototype.addByInput = function () {
 			this.saveTasks();
 		}
 	}.bind(this));
-}
+};
 
 /**
  * Method Delete  task 
@@ -111,7 +111,7 @@ ToDoList.prototype.removeEntry = function () {
 			this.el.removeChild(e.target);
 		}
 	}.bind(this));
-}
+};
 
 /**
  * Method cancel delete select task
@@ -129,7 +129,7 @@ ToDoList.prototype.undoRemove = function () {
 			alert("Нет удаленных задач!");
 		}
 	}.bind(this));
-}
+};
 
 
 
